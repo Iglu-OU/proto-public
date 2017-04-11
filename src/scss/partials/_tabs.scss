@@ -1,0 +1,58 @@
+.tabs {
+	&__nav {
+		margin: 0;
+		padding: 0 $page-padding-m;
+		list-style: none;
+		border-bottom: 1px solid darken($color-border, 5%);
+		li {
+			display: inline-block;
+			margin: 0 0 -1px;
+			-webkit-transition: 0.2s;
+			transition: 0.2s;
+			border: 1px solid darken($color-border, 5%);
+			border-radius: 2px 2px 0 0;
+			background-color: #fff;
+			font: 13px $font-name;
+			&.empty {
+				border-style: dashed dashed solid;
+				/*kas me seda ilma classita ei saa kätte? nimelt sellisel on href puudu või seal sees #.*/
+			}
+			&:hover {
+				border-top-color: darken($color-border, 10%);
+				border-right-color: darken($color-border, 10%);
+				border-left-color: darken($color-border, 10%);
+				background-color: rgba($color-border, .5);
+			}
+		}
+		a {
+			display: inline-block;
+			padding: 7px 15px;
+			border: none;
+		}
+		.active {
+			border-bottom-color: #fff;
+			background-color: #fff;
+			font-weight: bold;
+			a {
+				cursor: default;
+				border: none;
+				color: $font-color;
+			}
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
+	&__content {
+		margin-top: 0;
+		border-top: transparent;
+		border-radius: 0 0 2px 2px;
+	}
+	&__content-pane,
+	&__content-pane > *:last-child > li:last-child,
+	&__content-pane > ol:last-child,
+	&__content-pane > p:last-child,
+	&__content-pane > ul:last-child {
+		margin-bottom: 0;
+	}
+}

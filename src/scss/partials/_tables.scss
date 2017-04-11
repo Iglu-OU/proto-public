@@ -1,0 +1,187 @@
+.data-table {
+	> table {
+		@media (min-width: $break-md - 1px) {
+			width: 100%;
+		}
+		border-collapse: collapse;
+	}
+	tr {
+		border-bottom: 1px solid $color-border;
+	}
+	th {
+		padding: 9px;
+		text-align: left;
+		vertical-align: bottom;
+	}
+	td {
+		padding: 9px;
+		white-space: nowrap;
+		.btn,
+		.input__field {
+			display: inline-block;
+			margin: -5px 0;
+			padding: 5px 6px 4px;
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+		}
+		.btn--link {
+			margin: -5px 0 4px;
+			padding: 5px 0 0;
+		}
+		.input__field {
+			width: 120px;
+		}
+	}
+	thead tr {
+		border-bottom: 3px solid $color-border;
+	}
+}
+
+.sort {
+	position: relative;
+	&:after {
+		position: absolute;
+		top: 10px;
+		padding-left: 10px;
+		content: "\F0DC";
+		font-family: fontawesome;
+		color: lighten($color-main, 30%);
+	}
+}
+
+.filter {
+	position: relative;
+	&:after {
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: -3px;
+		width: 30px;
+		height: 100%;
+		padding: 1px 6px;
+		border-left: 1px solid $color-input;
+		font-size: 16px;
+		content: "\F0B0";
+		font-family: fontawesome;
+		color: lighten($color-main, 30%);
+	}
+	&__filter {
+		width: 90px;
+	}
+}
+
+.pager {
+	display: flex;
+	margin: 25px 0 0;
+	justify-content: space-between;
+	font-size: 13px;
+	&--center {
+		display: flex;
+		justify-content: center;
+	}
+	&__list {
+		display: inline-block;
+	}
+	&__list-item {
+		display: inline;
+		clear: both;
+		margin: 0;
+		padding-left: 0;
+		list-style-type: none;
+		a {
+			position: relative;
+			float: left;
+			margin-left: -1px;
+			padding: 5px 10px;
+			font-size: inherit;
+			-webkit-transition: .2s;
+			transition: .2s;
+			border: 1px dashed darken($color-border, 5%);
+			z-index: 0;
+			&[href] {
+				border-style: solid;
+				border-color: $color-border;
+			}
+			&:hover {
+				border-color: darken($color-border, 5%);
+				background-color: rgba($color-border, .5);
+				z-index: 2;
+			}
+			&.active {
+				border-color: $color-identity-light;
+				background-color: $color-identity-light;
+				color: $font-color-invert;
+				cursor: default;
+				z-index: 3;
+			}
+		}
+		&:first-child a {
+			border-top-left-radius: 2px;
+			border-bottom-left-radius: 2px;
+		}
+		&:last-child a {
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+		}
+	}
+	&__show-all {
+		border: none;
+		font-size: inherit;
+		padding-top: 5px;
+		margin-left: 15px;
+
+	}
+
+}
+
+@media (max-width: $break-md - 1px) {
+	.data-table--responsive {
+		table {
+			/*!
+			// IE needs inline-block to position scrolling shadows otherwise use:
+			 display: block;
+			 max-width: min-content;
+			*/
+			display: inline-block;
+			vertical-align: top;
+			max-width: 100%;
+
+			overflow-x: auto;
+
+			// optional - looks better for small cell values
+			white-space: nowrap;
+
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		table {
+			// optional - enable iOS momentum scrolling
+			-webkit-overflow-scrolling: touch;
+
+			// scrolling shadows
+			background: radial-gradient(left, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(right, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+			background-size: 10px 100%, 10px 100%;
+			background-attachment: scroll, scroll;
+			background-repeat: no-repeat;
+		}
+
+		td:first-child,
+		th:first-child {
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+			background-repeat: no-repeat;
+			background-size: 20px 100%;
+		}
+
+		td:last-child,
+		th:last-child {
+			background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+			background-repeat: no-repeat;
+			background-position: 100% 0;
+			background-size: 20px 100%;
+		}
+
+	}
+}
+

@@ -1,0 +1,33 @@
+.is-hidden {
+	display: none !important;
+}
+
+.is-visible {
+	display: block !important;
+}
+.text-center {
+	text-align: center;
+}
+
+@media (max-width: $break-sm - 1px) {
+	.is-hidden--xs {
+		display: none !important;
+	}
+}
+@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
+	.is-hidden--sm {
+		display: none !important;
+	}
+}
+
+@media (min-width: $break-md) and (max-width: $break-lg - 1px) {
+	.is-hidden--md {
+		display: none !important;
+	}
+}
+
+@media (min-width: $break-lg) {
+	.is-hidden--lg {
+		display: none !important;
+	}
+}

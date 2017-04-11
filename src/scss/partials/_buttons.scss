@@ -1,0 +1,99 @@
+//Button
+.btn {
+	display: inline-block;
+	padding: 7px 15px;
+	cursor: pointer;
+	transition: .2s;
+	border: 1px solid $color-identity-light;
+	border-radius: 2px;
+	background-color: $color-identity-light;
+	color: #fff;
+	font: 13px Arial, san-serif;
+	&:hover {
+		border-color: $color-identity-dark;
+		background-color: $color-identity-dark;
+		color: #fff;
+	}
+	&--empty {
+		border-style: dashed;
+		border-color: #fff;
+		&:hover {
+			border-color: #fff;
+		}
+	}
+	&--alt {
+		background-color: transparent;
+		color: $color-identity;
+		&.btn--empty {
+			border-style: dashed;
+			border-color: $color-identity-dark;
+		}
+		&:hover {
+			background-color: lighten($color-input, 17%);
+			border-color: $color-identity-dark;
+			color: $color-identity-dark;
+		}
+	}
+
+	&:focus {
+		outline: $color-identity-dark auto 5px;
+		border-color: $color-identity-dark;
+		background-color: $color-identity-dark;
+		color: #fff;
+	}
+	&--link {
+		display: inline-block;
+		padding-bottom: 0;
+		padding-right: 0;
+		padding-left: 0;
+		margin-bottom: 7px;
+		transition: .1s;
+		border: none;
+		border-bottom: 1px solid $color-identity-light;
+		border-radius: 0;
+		background-color: transparent;
+		color: $color-identity-light;
+		text-decoration: none;
+		&.btn--empty {
+			border-style: dashed;
+		}
+		&:hover {
+			background-color: transparent;
+			color: $color-identity-dark;
+		}
+		&:focus {
+			outline: $color-identity-light auto 5px;
+			background-color: transparent;
+			color: $color-identity-dark;
+		}
+	}
+}
+.controls {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	> *:not(:last-child) {
+		margin-right: .5em;
+	}
+	a {
+		margin-bottom: 7px;
+	}
+	a,
+	.btn--link {
+		margin-right: 10px;
+		margin-left: 10px;
+		padding-top: 7px;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&--right {
+		justify-content: flex-end;
+	}
+	&--spaced {
+		justify-content: space-between;
+	}
+}

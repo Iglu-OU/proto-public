@@ -1,0 +1,60 @@
+.accordion {
+	margin-bottom: $grid-gutter;
+	transition: margin .25s ease;
+	&__header {
+		display: block;
+		position: relative;
+		color: inherit;
+		padding: 7px 80px 7px 25px;
+		@media (max-width: $break-sm - 1px) {
+			padding: 7px 40px 7px 25px;
+		}
+		background-color: #f2f2f3;
+		font-weight: 500;
+		border-bottom: solid 1px #e4e4e4;
+		cursor: pointer;
+		&:hover {
+			color: inherit;
+			background-color: darken(#f2f2f3, 5%);
+			border-bottom: solid 1px darken(#f2f2f3, 10%);
+			.accordion__toggle {
+				color: #285f8f;
+			}
+		}
+	}
+	&__toggle {
+		position: absolute;
+		right: 25px;
+		top: 7px;
+		margin: 5px 0;
+		font-size: 14px;
+		padding-right: 19px;
+		color: #99a7ad;
+		font-weight: 300;
+	}
+	&__toggle-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 14px;
+		&.fa-chevron-up {
+			transition: all .2s ease;
+			padding-bottom: 0;
+		}
+	}
+	.accordion__toggle--hidden {
+		.fa-chevron-up {
+			padding-bottom: 3px;
+			transform: rotateX(180deg);
+		}
+	}
+
+	&__content {
+		display: block;
+		overflow: hidden;
+		padding: 0px 25px;
+	}
+	&--closed {
+		margin-bottom: 0;
+	}
+}

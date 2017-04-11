@@ -1,0 +1,33 @@
+.info {
+	position: relative;
+	font-weight: 300;
+	color: #556065;
+	font-size: $base-font-size;
+	background-color: $color-infotext;
+	padding: $page-padding-m;
+	margin-bottom: 1em;
+	&--arrow-left:before {
+		position: absolute;
+		top: 7px;
+    	left: -10px;
+		font-family: fontAwesome;
+		content: "\f0d9";
+		color: $color-infotext;
+		font-size: 35px;
+	}
+	&--arrow-up:before {
+		position: absolute;
+		left: 25px;
+		top: -25px;
+		font-family: fontAwesome;
+		content: "\f0d8";
+		color: $color-infotext;
+		font-size: 35px;
+	}
+	&--font-smaller {
+		font-size: 13px;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

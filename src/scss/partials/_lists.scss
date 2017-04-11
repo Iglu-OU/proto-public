@@ -1,0 +1,38 @@
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.list {
+	margin: 0 0 $page-padding-m;
+	padding: 0 0 0 $page-padding-m;
+	list-style-type: none;
+	li {
+		position: relative;
+		margin: 0 0 $page-padding-s;
+		font-weight: 300;
+		a {
+			margin-bottom: 0;
+		}
+		&:before {
+			position: absolute;
+			top: -1px;
+			left: -15px;
+			content: "-";
+			color: lighten($color-main, 40%);
+			font-weight: bold;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+ol.list {
+	margin: 0 0 $page-padding-m;
+	padding: 0 0 0 $page-padding-m;
+	list-style-type: decimal;
+	li:before {
+		display: none;
+	}
+}
