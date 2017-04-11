@@ -17,7 +17,7 @@
 							<strong>npm run dev</strong>
 						</p>
 						<p>
-							# build for production with minification<br>
+							# build for production with minification <br>
 							<strong>npm run build</strong>
 						</p>
 					</section>
